@@ -1,7 +1,7 @@
 <div class="container-1">
   <div class="background">
     <div class="abstract-shape shape-1"></div>
-    <div class="abstract-shape shape-2"></div>
+    <img src="/bg.jpeg" alt="">
   </div>
 
   <div class="content">
@@ -13,11 +13,16 @@
       </div>
     </div>
 
+
     <app-countdown></app-countdown>
 
-    <div class="buttons">
+    <h1 class="title-italic">¡Estás invitad&#64;!</h1>
+
+
+    <div class="row gap-2">
+      <button class="btn btn-secondary" (click)="navigateToAlbum()" [disabled]="albumButtonIsDisabled()">Ir al Álbum</button>
       <button class="btn btn-primary" (click)="navigateToInfo()">Información</button>
-      <button class="btn btn-secondary" (click)="navigateToAlbum()">Ir al Álbum</button>
+      <button class="btn btn-secondary" (click)="navigateToZoom()" [disabled]="zoomVideoCallButtonIsDisabled()">Ver ceremonia por zoom</button>
     </div>
   </div>
 

@@ -1,0 +1,49 @@
+:root {
+  --primary: #2d3142;
+  --secondary: #4f5d75;
+  --accent: #9a86a4;
+  --background: #f5f5f5;
+  --text: #2d3142;
+}
+
+
+.wedding-container {
+  background-color: #2d3142;
+}
+.title-line {
+  display: block;
+  text-align: center;
+  line-height: 0.9;
+  font-size: 3.8rem;
+}
+
+.title-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.title-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  /* background: linear-gradient(120deg, #9a86a4, #4f5d75); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .title-line {
+    font-size: 3.2rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+    gap: 1rem;
+  }
+}
