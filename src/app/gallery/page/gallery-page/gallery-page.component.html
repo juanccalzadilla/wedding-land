@@ -1,12 +1,13 @@
 <div class="wrapper" (scroll)="onScroll($event)">
     <input
-  type="file"
-  accept="image/*"
-  capture="environment"
-  hidden
-  #cameraInput
-  (change)="onFileSelected($event)"
->
+    type="file"
+    accept="image/*,video/*"
+    capture
+    hidden
+    #cameraInput
+    (change)="onFilesSelected($event)"
+    multiple
+  >
     <header [style.--progress]="progress">
         <div class="header-content">
             <!-- <img class="header-image" src="bg.jpeg" alt="Header Image" /> -->

@@ -44,11 +44,19 @@ export class GalleryPageComponent {
     
   }
 
-  async onFileSelected(event: Event) {
+  async onFilesSelected(event: Event) {
     const input = event.target as HTMLInputElement;
-    if (input.files && input.files[0]) {
-      const file = input.files[0];
-      this.imageUrl = await this.galleryService.uploadImage(file);
+    const files = input.files;
+
+    if (files) {
+      for (const file of Array.from(files)) {
+        const url = await this.galleryService.uploadImage(file);
+        const isImage = file.type.startsWith('image/');
+        const isVideo = file.type.startsWith('video/');
+        // if (isImage || isVideo) {
+        //   this.mediaUrls.push({ url, type: isImage ? 'image' : 'video' });
+        // }
+      }
     }
   }
  }

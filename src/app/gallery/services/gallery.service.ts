@@ -11,7 +11,8 @@ export class GalleryService {
   constructor(private storage: Storage) { }
 
   async uploadImage(file: File): Promise<string> {
-    const filePath = `images/${uuidv4()}_${file.name}`;
+    const folder = file.type.startsWith('video/') ? 'videos' : 'images';
+    const filePath = `${folder}/${uuidv4()}_${file.name}`;
     const fileRef = ref(this.storage, filePath);
     await uploadBytes(fileRef, file);
     return await getDownloadURL(fileRef);
