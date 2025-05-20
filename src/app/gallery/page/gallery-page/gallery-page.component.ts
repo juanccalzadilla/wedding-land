@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { GalleryHeaderComponent } from "../../components/gallery_header/gallery_header.component";
+import { GalleryService } from '../../services/gallery.service';
 
 @Component({
   selector: 'app-gallery-page',
@@ -9,6 +10,12 @@ import { GalleryHeaderComponent } from "../../components/gallery_header/gallery_
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GalleryPageComponent {
+
+  imageUrl: string | null = null;
+
+  @ViewChild('cameraInput') cameraInputRef!: ElementRef<HTMLInputElement>;
+
+  constructor(private galleryService: GalleryService) {}
 
   isScrolled = false;
 
@@ -31,4 +38,17 @@ export class GalleryPageComponent {
   }
 
 
+  takePhoto() {
+    this.cameraInputRef.nativeElement.click(); // Activa el input oculto
+    console.log('Entro');
+    
+  }
+
+  async onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      this.imageUrl = await this.galleryService.uploadImage(file);
+    }
+  }
  }

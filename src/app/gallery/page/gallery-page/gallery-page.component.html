@@ -1,4 +1,12 @@
 <div class="wrapper" (scroll)="onScroll($event)">
+    <input
+  type="file"
+  accept="image/*"
+  capture="environment"
+  hidden
+  #cameraInput
+  (change)="onFileSelected($event)"
+>
     <header [style.--progress]="progress">
         <div class="header-content">
             <!-- <img class="header-image" src="bg.jpeg" alt="Header Image" /> -->
@@ -10,7 +18,7 @@
                     <h6 style="text-align: center;">Sé parte de esta aventura y comparte fotos de nuestra boda, quedarán
                         unos recuerdos súúper bonitos</h6>
                         <div style="height: 30px;"></div>
-                    <button class="btn btn-primary-white d-flex align-items-center justify-content-between">
+                    <button class="btn btn-primary-white d-flex align-items-center justify-content-between" (click)="takePhoto()">
                         <img class="me-2" width="20" src="/upload.svg" alt="">
                         Subir nuevo recuerdo</button>
 
