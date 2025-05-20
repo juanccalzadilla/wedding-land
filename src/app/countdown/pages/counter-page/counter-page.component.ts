@@ -18,7 +18,8 @@ export class CounterPageComponent {
   public zoomLink: String = "https://us05web.zoom.us/j/8461339861?pwd=o8Xp1QIcR3XWWyxhsiAzGeBxbWue4x.1&omn=84134889444";
 
   constructor(private router: Router, private ws: WeddingAccessService) {
-    this.albumButtonIsDisabled.set(this.ws.isBeforeWedding())
+    // this.albumButtonIsDisabled.set(this.ws.isBeforeWedding())
+    this.albumButtonIsDisabled.set(false)
     this.zoomVideoCallButtonIsDisabled.set(!this.ws.isDuringWedding())
   }
 
@@ -29,7 +30,7 @@ export class CounterPageComponent {
   }
 
   navigateToAlbum(): void {
-    this.router.navigate(['/album']);
+    this.router.navigate(['/gallery']);
   }
 
   navigateToZoom(): void {

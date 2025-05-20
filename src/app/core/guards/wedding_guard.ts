@@ -25,7 +25,7 @@ export class WeddingGuard implements CanActivate {
         if (now < this.accessService['weddingDate']) {
           this.router.navigate(['']);
         } else {        
-          this.router.navigate(['/album']);
+          this.router.navigate(['/gallery']);
         }
       } else {
         this.router.navigate(['/zoom']);
@@ -34,7 +34,7 @@ export class WeddingGuard implements CanActivate {
     }
 
     // Después de la boda: redirigir siempre al álbum
-    this.router.navigate(['/album']);
+    this.router.navigate(['/gallery']);
     return false;
   }
 }
