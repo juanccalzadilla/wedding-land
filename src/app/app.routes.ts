@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { CounterPageComponent } from './countdown/pages/counter-page/counter-page.component';
 import { InformationPageComponent } from './information/pages/information-page/information-page.component';
 import { WeddingGuard } from './core/guards/wedding_guard';
-import { GalleryPageComponent } from './gallery/page/gallery-page/gallery-page.component';
+
 
 export const routes: Routes = [
     {
@@ -13,10 +13,6 @@ export const routes: Routes = [
     {
         path: 'info',
         component: InformationPageComponent
-    },
-    {
-        path: 'gallery',
-        component: GalleryPageComponent
     },
     {
         path: '**',

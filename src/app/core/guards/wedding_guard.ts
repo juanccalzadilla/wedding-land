@@ -10,6 +10,9 @@ export class WeddingGuard implements CanActivate {
     private router: Router
   ) {}
 
+  public dotsMemoryLink : String = "https://web.dotstheapp.com/a?groupId=1811562";
+
+
   canActivate(): boolean {
     this.accessService.updateNow();
 
@@ -25,7 +28,7 @@ export class WeddingGuard implements CanActivate {
         if (now < this.accessService['weddingDate']) {
           this.router.navigate(['']);
         } else {        
-          this.router.navigate(['/gallery']);
+          window.location.href = this.dotsMemoryLink.toString();
         }
       } else {
         this.router.navigate(['/zoom']);
@@ -34,7 +37,7 @@ export class WeddingGuard implements CanActivate {
     }
 
     // Después de la boda: redirigir siempre al álbum
-    this.router.navigate(['/gallery']);
+    window.location.href = this.dotsMemoryLink.toString();
     return false;
   }
 }
