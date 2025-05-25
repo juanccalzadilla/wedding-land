@@ -15,6 +15,6 @@ export class InformationPageComponent {
   }
   
   navigateToAlbum(): void {
-    this.router.navigate(['/album']);
+    this.router.navigate(['/gallery']);
   }
  }

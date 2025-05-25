@@ -16,6 +16,7 @@ export class CounterPageComponent {
   public zoomVideoCallButtonIsDisabled = signal(true);
 
   public zoomLink: String = "https://us05web.zoom.us/j/8461339861?pwd=o8Xp1QIcR3XWWyxhsiAzGeBxbWue4x.1&omn=84134889444";
+  public dotsMemoryLink : String = "https://web.dotstheapp.com/a?groupId=1811562";
 
   constructor(private router: Router, private ws: WeddingAccessService) {
     this.albumButtonIsDisabled.set(this.ws.isBeforeWedding())
@@ -29,7 +30,7 @@ export class CounterPageComponent {
   }
 
   navigateToAlbum(): void {
-    this.router.navigate(['/album']);
+    window.location.href = this.dotsMemoryLink.toString();
   }
 
   navigateToZoom(): void {
