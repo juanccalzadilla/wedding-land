@@ -11,6 +11,7 @@ export class WeddingGuard implements CanActivate {
   ) {}
 
   public dotsMemoryLink : String = "https://web.dotstheapp.com/a?groupId=1811562";
+  public zoomLink: String = "https://us05web.zoom.us/j/8461339861?pwd=o8Xp1QIcR3XWWyxhsiAzGeBxbWue4x.1&omn=84134889444";
 
 
   canActivate(): boolean {
@@ -31,7 +32,7 @@ export class WeddingGuard implements CanActivate {
           window.location.href = this.dotsMemoryLink.toString();
         }
       } else {
-        this.router.navigate(['/zoom']);
+        window.location.href = this.zoomLink.toString();
       }
       return false;
     }
